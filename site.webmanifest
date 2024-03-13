@@ -1,0 +1,19 @@
+{
+  "name": "Willian Duarte de Andrade | Staff Software Engineer | Tech Lead | Golang | NodeJS | Typescript | C#",
+  "short_name": "Willian Duarte de Andrade personal website",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#e3c53a",
+  "background_color": "#292929",
+  "display": "standalone"
+}
