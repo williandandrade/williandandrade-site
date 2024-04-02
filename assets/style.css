@@ -1,177 +1,52 @@
-/* CSS Reset */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+:root {
+  --color-primary: #E3C53A;
+  --color-secondary: #E3E3E3;
+  --color-bg: #272727;
+  --color-bg-secondary: #333333;
+  --color-highlight: #CE4257;
+}
+
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-div {
   box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/* Variables */
-:root {
-  --bg: #292929;
-  --text-color: #e3e3e3;
-  --main-color: #e3c53a;
-  --main-color-hover: #333;
-}
-
-/* Global Styles */
-body {
   font-family: "Fira Sans", sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg);
+}
+
+body {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  background-color: var(--color-bg);
 }
 
 a:visited,
 a:link {
-  color: var(--text-color);
+  color: var(--color-secondary);
   text-decoration: none;
 }
 
-/* Header */
-header div {
+main {
   display: flex;
   flex-direction: column;
-  padding: 5rem 2rem;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  height: 100vh;
+  max-width: 1280px;
+  padding: 0 8rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem .5rem;
   text-align: center;
 }
 
 header h1 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--main-color);
+  color: var(--color-primary);
 }
 
 header h2 {
@@ -184,100 +59,47 @@ header span {
   font-size: .8rem;
 }
 
-header ul {
+.content .social ul {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
 }
 
-header .social {
-  display: flex;
-  flex-basis: 50%;
-  width: 100%;
+.content .social a {
+  font-size: 1.5rem;
+  margin: 0 .5rem;
 }
 
-header .social a:link,
-header .social a:visited {
-  padding: 5rem 0;
-  text-align: center;
-  color: var(--text-color);
-  width: 100%;
-  background-color: var(--bg);
-  filter: brightness(85%);
-  border: 1px solid var(--main-color);
+.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  text-indent: -9999px;
+  text-overflow: hidden;
 }
 
-header .social a:hover {
-  background-color: var(--main-color-hover);
-  filter: brightness(100%);
+.icon-resume {
+  background-image: url('edit.svg');
 }
 
-header .social.resume a {
-  border-top: none;
-  border-left: none;
+.icon-linkedin {
+  background-image: url('linkedin.svg');
 }
 
-header .social.linkedin a {
-  border-top: none;
-  border-right: none;
+.icon-github {
+  background-image: url('github.svg');
 }
 
-header .social.github a {
-  border-bottom: none;
-  border-left: none;
+.icon-twitter {
+  background-image: url('twitter.svg');
 }
 
-header .social.x a {
-  border-bottom: none;
-  border-right: none;
-}
+@media screen and (max-width: 768px) {
+  main {
+    padding: 0;
+  }
 
-/*
-
-header .social.resume a {
-  background-color: rgba(227, 197, 58, 0.3);
-}
-
-header .social.linkedin a {
-  background-color: rgba(0, 119, 181, 0.3);
-}
-
-header .social.github a {
-  background-color: rgba(51, 51, 51, 0.3);
-}
-
-header .social.x a {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-header .social.instagram a {
-  background-color: rgba(225, 48, 108, 0.3);
-}
-
-header .social.medium a {
-  background-color: rgb(0, 0, 0, 0.3);
-}
-
-header .social.hashnode a {
-  background-color: rgba(41, 98, 255, 0.3);
-}
-
-header .social.devto a {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-*/
-
-@media only screen and (min-width: 768px) {
   header {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  header div {
-    height: 100vh;
-  }
-
-  header>* {
-    width: 50%;
+    padding: 0;
   }
 }
